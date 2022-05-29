@@ -1,4 +1,3 @@
-from asyncore import write
 import subprocess  # using to open the Zoom app
 import pyautogui  # using to automate mouse movement and typing
 import time  # using to get the time between the steps
@@ -48,11 +47,11 @@ def main():
             row = csv_data_frame.loc[csv_data_frame['meetingTime'] == current_time]
             # extracts the meeting details   
             meeting_ID = str(row.iloc[0,1])
-            # print("meeting ID: " + meeting_ID)
+            print("meeting ID: " + meeting_ID)
             meeting_password = str(row.iloc[0,2])
-            # print("meeting password: " + meeting_password)
+            print("meeting password: " + meeting_password)
 
-            # print("joining the zoom meeting")
+            print("joining the zoom meeting")
             sign_in(meeting_ID, meeting_password)
             time.sleep(120)
 
